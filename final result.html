@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Enter Marks</title>
+<script type="text/javascript">
+function submit_marks() {
+var sub1 = parseInt(document.getElementById('s1').value);
+var sub2 = parseInt(document.getElementById('s2').value);
+var sub3 = parseInt(document.getElementById('s3').value);
+var result=(sub1+sub2)/2;
+var total = result+sub3;
+var per  = total/2;
+var grade;
+if (per>=35 && per<=60) {
+grade = 'F';
+} 
+
+else if(per>=61 && per<=70){
+grade = 'D';
+}
+
+else if(per>=71 && per<=80){
+grade = 'C';
+}
+
+else if(per>=81 && per<=90){
+grade = 'B';
+}
+
+else if(per>=91 && per<=100){
+grade = 'A';
+}
+
+else{
+grade = "Invalid or Failed";
+}
+document.getElementById("demo").innerHTML = "Your Total Marks : "+total+"<br>Your Percentage : "+per+"<br>Your Grade : "+grade;
+var element = document.getElementById("Mobility");
+element.value = "10";
+// document.write("Your Total Marks : "+total);
+// document.write("<br>Your Percentage : "+per);
+// document.write("<br>Your Grade : "+grade);
+				
+}
+</script>
+</head>
+<body>
+<select style="width: 280px" id="Mobility" name="Mobility">
+  <option>Please Select course</option>
+  <option>Javascript</option>
+  <option>Machine learning</option>
+  <option>Full Stack Mean</option>
+  <option>C#.NET</option>
+  <option>MTLR</option>
+
+  
+</select>
+	<h1>Enter Students Marks</h1>
+	<input type="text" id="s1" placeholder="Enter ISAI Marks"><br>
+	<input type="text" id="s2" placeholder="Enter ISAIII Marks"><br>
+	<input type="text" id="s3" placeholder="Enter ESA Marks"><br>
+	
+
+	<input type="submit" onclick="submit_marks()">
+
+	<div id="demo"></div>
+</body>
+</html>
